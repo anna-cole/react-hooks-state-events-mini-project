@@ -14,13 +14,20 @@ function App() {
     const updatedList = tasks.filter(task => task.text !== text)
     setTasks(updatedList)
   }
+
+  const taskCat = tasks.map(task => {return task.category})
+
+  function handleFilter(cat) {
+    console.log(cat)
+    
+  }
  
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter categories={categories}/>
+      <CategoryFilter categories={categories} onClickFilterTasks={handleFilter}/>
       <NewTaskForm />
-      <TaskList tasks={tasks} onClickDelete={handleDelete}/>
+      <TaskList tasks={tasks} onClickDelete={handleDelete} />
     </div>
   );
 }
