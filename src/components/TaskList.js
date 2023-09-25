@@ -6,7 +6,7 @@ function TaskList({ tasks, onClickDelete }) {
     <div className="tasks">
       {/* display a list of tasks using Task component */}
       {tasks.map(task => 
-        <Task key={task.text} text={task.text} category={task.category} onClickDelete={onClickDelete}
+        <Task key={task.text} text={task.text} category={task.category} onDeleteTask={onClickDelete}
         />
       )}
     </div>
